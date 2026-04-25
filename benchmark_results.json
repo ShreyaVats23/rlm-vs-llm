@@ -1,0 +1,142 @@
+{
+  "meta": {
+    "date": "2026-04-25 16:43:51",
+    "model": "llama-3.1-8b-instant",
+    "framework": "LLM vs RLM Comparative Evaluation v2.0",
+    "scoring": {
+      "w_quality": 0.5,
+      "w_ctx": 0.25,
+      "w_efficiency": 0.15,
+      "w_latency": 0.1,
+      "ctx_depth_cap": 12,
+      "latency_cap": 480,
+      "formula": "final = 0.50*quality + 0.25*ctx_norm + 0.15*efficiency - 0.10*latency_penalty"
+    }
+  },
+  "summary": {
+    "avg_llm_score": 2.96,
+    "avg_rlm_score": 5.15,
+    "rlm_improvement": "+73.99%",
+    "llm_wins": 0,
+    "rlm_wins": 4,
+    "ties": 0
+  },
+  "results": [
+    {
+      "id": "Q1",
+      "label": "Simple",
+      "query": "What is the difference between a list and a tuple in Python?",
+      "llm": {
+        "system": "LLM",
+        "time_s": 2.76,
+        "ctx_depth": 1,
+        "tool_calls": 0,
+        "task_quality": 6,
+        "answer_len": 977,
+        "confidence": 0.7,
+        "steps": 4,
+        "final_score": 3.23
+      },
+      "rlm": {
+        "system": "RLM",
+        "time_s": 2.41,
+        "ctx_depth": 4,
+        "tool_calls": 1,
+        "task_quality": 7,
+        "answer_len": 1703,
+        "confidence": 0.72,
+        "steps": 1,
+        "final_score": 4.54
+      },
+      "delta": 1.31,
+      "winner": "RLM"
+    },
+    {
+      "id": "Q2",
+      "label": "Medium",
+      "query": "Explain transformer attention mechanisms and compare LLM vs RLM agents.",
+      "llm": {
+        "system": "LLM",
+        "time_s": 18.73,
+        "ctx_depth": 1,
+        "tool_calls": 0,
+        "task_quality": 6,
+        "answer_len": 975,
+        "confidence": 0.75,
+        "steps": 4,
+        "final_score": 3.2
+      },
+      "rlm": {
+        "system": "RLM",
+        "time_s": 630.57,
+        "ctx_depth": 14,
+        "tool_calls": 0,
+        "task_quality": 7,
+        "answer_len": 1902,
+        "confidence": 0.82,
+        "steps": 18,
+        "final_score": 5.38
+      },
+      "delta": 2.18,
+      "winner": "RLM"
+    },
+    {
+      "id": "Q3",
+      "label": "Heavy context",
+      "query": "Analyse the limitations of standard LLM systems, the complexity of MCP/A2A integrations, and the advantages of RLM architectures for long-horizon reasoning tasks.",
+      "llm": {
+        "system": "LLM",
+        "time_s": 12.39,
+        "ctx_depth": 1,
+        "tool_calls": 0,
+        "task_quality": 6,
+        "answer_len": 1012,
+        "confidence": 0.75,
+        "steps": 4,
+        "final_score": 3.21
+      },
+      "rlm": {
+        "system": "RLM",
+        "time_s": 450.35,
+        "ctx_depth": 16,
+        "tool_calls": 4,
+        "task_quality": 7,
+        "answer_len": 1383,
+        "confidence": 0.97,
+        "steps": 20,
+        "final_score": 5.8
+      },
+      "delta": 2.59,
+      "winner": "RLM"
+    },
+    {
+      "id": "Q4",
+      "label": "Multi-hop",
+      "query": "Explain the full workflow, context flow, and failure modes in LLM vs RLM multi-agent systems, including how each handles tool use, memory, and cross-agent delegation.",
+      "llm": {
+        "system": "LLM",
+        "time_s": 23.55,
+        "ctx_depth": 1,
+        "tool_calls": 0,
+        "task_quality": 4,
+        "answer_len": 973,
+        "confidence": 0.7,
+        "steps": 4,
+        "final_score": 2.19
+      },
+      "rlm": {
+        "system": "RLM",
+        "time_s": 864.58,
+        "ctx_depth": 19,
+        "tool_calls": 0,
+        "task_quality": 6,
+        "answer_len": 1855,
+        "confidence": 0.76,
+        "steps": 26,
+        "final_score": 4.88
+      },
+      "delta": 2.69,
+      "winner": "RLM"
+    }
+  ]
+}
